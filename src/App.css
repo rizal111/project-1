@@ -1,0 +1,24 @@
+.BG-G {
+	background-color: #9adcbb;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.BG-W {
+	background-color: #fafafa;
+	display: flex;
+	flex-direction: column;
+	padding: 0px 50px 0px 50px;
+}
+
+.Header {
+	padding-bottom: 20px;
+}
+
+.Content {
+	padding-bottom: 30px;
+}

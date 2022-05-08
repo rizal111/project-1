@@ -18,9 +18,10 @@ const ChangeLanguage = () => {
   };
 
   const { i18n } = useTranslation();
+  const initLang = i18n.language;
 
   const [open, setOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState(langs[i18n.language].name);
+  const [currentLang, setCurrentLang] = useState(langs[initLang].name);
 
   const handleClose = () => {};
 

@@ -6,21 +6,21 @@ import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { useColorMode } from "../App.js";
 
 const ChangeTheme = () => {
-	const theme = useTheme();
+  const theme = useTheme();
 
-	return (
-		<IconButton
-			sx={{ ml: 1 }}
-			onClick={useColorMode().toggleColorMode}
-			color="inherit"
-		>
-			{theme.palette.mode === "dark" ? (
-				<Brightness7Icon />
-			) : (
-				<Brightness4Icon />
-			)}
-		</IconButton>
-	);
+  return (
+    <IconButton
+      sx={{ ml: 1 }}
+      onClick={useColorMode().toggleColorMode}
+      color="inherit"
+    >
+      {theme.palette.mode === "dark" ? (
+        <Brightness7Icon />
+      ) : (
+        <Brightness4Icon />
+      )}
+    </IconButton>
+  );
 };
 
 export default ChangeTheme;

@@ -12,27 +12,23 @@ import {
 import LanguageIcon from "@mui/icons-material/Language";
 
 const ChangeLanguage = () => {
-  const { i18n } = useTranslation();
-
-  const [open, setOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState(i18n.language);
-
   const langs = {
     en: { name: "English" },
     may: { name: "Malay" },
   };
 
+  const { i18n } = useTranslation();
+
+  const [open, setOpen] = useState(false);
+  const [currentLang, setCurrentLang] = useState(langs[i18n.language].name);
+
   const handleClose = () => {};
 
   const handleLanguageChange = (lang) => {
     i18n.changeLanguage(lang);
+    setCurrentLang(langs[lang].name);
     setOpen(false);
   };
-
-  useEffect(() => {
-    console.log(i18n.language);
-    setCurrentLang(i18n.language);
-  }, []);
 
   return (
     <div>
@@ -41,7 +37,7 @@ const ChangeLanguage = () => {
         onClick={() => setOpen(true)}
         startIcon={<LanguageIcon />}
       >
-        <Typography>{langs[i18n.language].name}</Typography>
+        <Typography>{currentLang}</Typography>
       </Button>
       <Dialog onClose={handleClose} open={open}>
         <DialogTitle>Set Language</DialogTitle>

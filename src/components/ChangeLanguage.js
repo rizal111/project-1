@@ -19,6 +19,7 @@ const ChangeLanguage = () => {
 
   const { i18n } = useTranslation();
   const initLang = i18n.language;
+  console.log(i18n.language);
 
   const [open, setOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState(langs[initLang].name);

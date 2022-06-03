@@ -1,12 +1,12 @@
 import React, { useState, useMemo, createContext, useContext } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { AuthProvider } from "./provider/AuthProvider.js";
+import { AuthProvider } from "./providers/AuthProvider";
 import "./services/i18n";
 
 import "./App.css";
 import "@fontsource/open-sans";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { getDesignTokens } from "./theme/theme.js";
+import { getDesignTokens } from "./theme/theme";
 
 import Auth from "./pages/auth";
 import Dashboard from "./pages/Dashboard/Dashboard.js";
@@ -32,7 +32,9 @@ function App() {
   );
 
   // Update the theme only if the mode changes
+
   const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
+
   return (
     <AuthProvider>
       <ColorModeContext.Provider value={colorMode}>

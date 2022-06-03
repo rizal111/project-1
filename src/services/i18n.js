@@ -3,14 +3,14 @@ import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import Backend from "i18next-http-backend";
 import translationEN from "../locales/en/translation.json";
-import translationMAY from "../locales/may/translation.json";
+import translationMS from "../locales/ms/translation.json";
 
 const resources = {
   en: {
     translation: translationEN,
   },
-  may: {
-    translation: translationMAY,
+  ms: {
+    translation: translationMS,
   },
 };
 
@@ -29,6 +29,8 @@ i18n
   .init({
     resources,
     debug: true,
+    load: "languageOnly",
+    supportedLngs: ["en", "ms"],
     fallbackLng: "en",
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
@@ -41,6 +43,6 @@ i18n
     },
   });
 
-console.log("i18n current:", i18n.language);
+console.log("i18n current:", i18n.resolvedLanguage);
 
 export default i18n;

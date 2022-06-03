@@ -14,15 +14,16 @@ import LanguageIcon from "@mui/icons-material/Language";
 const ChangeLanguage = () => {
   const langs = {
     en: { name: "English" },
-    may: { name: "Malay" },
+    ms: { name: "Malay" },
   };
 
   const { i18n } = useTranslation();
-  const initLang = i18n.language;
-  console.log(i18n.language);
+  console.log(i18n.resolvedLanguage);
 
   const [open, setOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState(langs[initLang].name);
+  const [currentLang, setCurrentLang] = useState(
+    langs[i18n.resolvedLanguage].name
+  );
 
   const handleClose = () => {};
 

@@ -18,6 +18,14 @@ Database : Firebase
 
 # System Overview
 
+## Theme
+
+User able to change Theme of the website.
+
+## Locales
+
+English and Malay available. Able to change language using browser current language or change manualy, and language persist on revisiting.  
+
 ## Credential 
 
 Signup with password strength indicator and suggestion, will send activation link with email.

@@ -20,19 +20,19 @@ Database : Firebase
 
 ## Theme
 
-User able to change Theme of the website.
+Users can change the theme of the website.
 
 ## Locales
 
-English and Malay available. Able to change language using browser current language or change manualy, and language persist on revisiting.  
+English and Malay are available. Able to change language using browser current language or change manually, and language persist on revisiting.  
 
 ## Credential 
 
-Signup with password strength indicator and suggestion, will send activation link with email.
+Signup with password strength indicator and suggestion, will send activation link to the user's email.
 
 Login with 2FA 
 
-Forget Password - Re-set password with email  
+Forget Password - Re-set password with user's email  
 
 # Library
 

@@ -7,9 +7,13 @@ Employer to manage human resources and related processes throughout the employee
 # System & Services
 
 Framework : React with TypeScript
+
 UI Kit : Material UI
+
 Deploy and Hosting : CloudFlare  
+
 Database : Firebase
+
 2FA : 
 
 # System Overview

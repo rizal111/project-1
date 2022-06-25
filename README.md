@@ -24,13 +24,13 @@ Users can change the theme of the website.
 
 ## Locales
 
-English and Malay are available. Able to change language using browser current language or change manually, and language persist on revisiting.  
+English and Malay are available. On 1st visit App will follow browser current language, can change manually and language persist on revisiting.  
 
 ## Credential 
 
 Signup with password strength indicator and suggestion, will send activation link to the user's email.
 
-Login with 2FA 
+Login with 2FA. 
 
 Forget Password - Re-set password with user's email  
 

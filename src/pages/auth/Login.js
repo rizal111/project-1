@@ -46,9 +46,8 @@ export default function Login(props) {
         case "verified":
           navigate("/dashboard");
           break;
-        case "not":
-          setError("Not Verified");
-          await logout();
+        case "not verified":
+          // navigate("/emailverification");
           break;
         default:
       }

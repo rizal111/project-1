@@ -17,7 +17,7 @@ import dark from "./dark.js";
 //   }
 // }
 
-export type mode = "light" | "dark";
+export type Mode = "light" | "dark";
 
 // https://mui.com/material-ui/customization/theme-components/
 declare module "@mui/material/TextField" {
@@ -27,7 +27,7 @@ declare module "@mui/material/TextField" {
 }
 
 // https://mui.com/material-ui/customization/dark-mode/
-export const getDesignTokens = (mode: mode) => ({
+export const getDesignTokens = (mode: Mode) => ({
   palette: {
     mode,
     ...(mode === "light" ? light : dark),

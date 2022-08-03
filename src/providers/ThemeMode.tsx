@@ -3,9 +3,9 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import { getDesignTokens } from "../theme/theme";
 
-import type { mode } from "../theme/theme";
+import type { Mode } from "../theme/theme";
 
-const [mode, setMode] = useState<mode>("light");
+const [mode, setMode] = useState<Mode>("light");
 
 const colorMode = useMemo(
   () => ({

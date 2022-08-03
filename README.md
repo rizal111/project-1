@@ -2,6 +2,10 @@
 
 https://project-1-b4i.pages.dev/
 
+# run
+
+`npm start`
+
 # Library
 
 ## zxcvbn-ts

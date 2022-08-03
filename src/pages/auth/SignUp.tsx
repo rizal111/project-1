@@ -36,27 +36,26 @@ const SignUp = ({ goLogin, snack, onSuccess }: Props) => {
 
   const passwordElementRef = useRef<any>("");
 
-  const emailRef = useRef();
+  const emailRef = useRef<any>("");
   const passwordRef = useRef<any>("");
-  const passwordConfirmRef = useRef();
-  const { signup } = useAuth();
-  const { sendemailver } = useAuth();
+  const passwordConfirmRef = useRef<any>("");
+  const { signUp, sendemailver } = useAuth();
 
   async function handleSubmit(e: { preventDefault: () => void }) {
     e.preventDefault();
     setLoading(true);
 
-    if (passwordRef.current !== passwordConfirmRef.current) {
-      return setError("Passwords do not match");
-    }
-
-    try {
-      setError("");
-      await signup(emailRef.current, passwordRef.current);
-    } catch {
-      setError("Failed to create an account");
+    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+      setError("Passwords do not match");
       return setLoading(false);
     }
+
+    await signUp(emailRef.current.value, passwordRef.current.value)
+      .then()
+      .catch(() => {
+        setError("Failed to create an account");
+        return setLoading(false);
+      });
 
     try {
       await sendemailver();
@@ -97,7 +96,7 @@ const SignUp = ({ goLogin, snack, onSuccess }: Props) => {
                     .suggestions,
                   warning: pse(passwordRef.current?.value).feedback.warning,
                 });
-                console.log(pse(passwordRef.current?.value).feedback);
+                // console.log(pse(passwordRef.current?.value).feedback);
               }}
               inputRef={passwordRef}
             />
@@ -127,6 +126,7 @@ const SignUp = ({ goLogin, snack, onSuccess }: Props) => {
               variant="contained"
               endIcon={<ArrowForwardIcon />}
               onClick={handleSubmit}
+              disabled={loading}
             >
               Sign Up
             </Button>

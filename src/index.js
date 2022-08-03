@@ -7,12 +7,12 @@ import "./services/i18n.js";
 import { Suspense } from "react";
 
 ReactDOM.render(
-	<React.StrictMode>
-		<Suspense fallback="...is loading">
-			<App />
-		</Suspense>
-	</React.StrictMode>,
-	document.getElementById("root")
+  <React.StrictMode>
+    <Suspense fallback="...is loading">
+      <App />
+    </Suspense>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

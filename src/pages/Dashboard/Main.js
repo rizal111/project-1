@@ -4,6 +4,7 @@ import { useAuth } from "../../providers/AuthProvider.js";
 import { Link } from "react-router-dom";
 import { db } from "../../services/Firebase.js";
 import { getDocs, collection, query, where } from "firebase/firestore";
+import { employees } from "../../Firestore/employee";
 
 import {
   Typography,
@@ -49,10 +50,7 @@ const Main = () => {
 
   useEffect(() => {
     let isCancelled = false;
-    async function fetchMain() {
-      const snapEmployees = await getDocs(
-        query(collection(db, "Employees"), where("User_FK", "==", currentUser))
-      );
+    const fetchMain = async () => {
       const snapAddresses = await getDocs(
         query(collection(db, "Addresses"), where("User_FK", "==", currentUser))
       );
@@ -61,9 +59,7 @@ const Main = () => {
       setAddresses(
         snapAddresses.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
       );
-      setEmployees(
-        snapEmployees.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-      );
+      setEmployees(employees);
       setAddressSelect(
         snapAddresses.docs.map((doc) => ({
           id: doc.id,
@@ -73,7 +69,7 @@ const Main = () => {
       setRoles(
         snapRole.docs.map((doc) => ({ id: doc.id, name: doc.data().Name }))
       );
-    }
+    };
     fetchMain();
     return () => {
       isCancelled = true;

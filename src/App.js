@@ -1,6 +1,7 @@
 import React, { useState, useMemo, createContext, useContext } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./providers/AuthProvider";
+import "./services/Firebase";
 import "./services/i18n";
 
 import "./App.css";

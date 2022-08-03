@@ -10,7 +10,7 @@ import { Stack } from "@mui/material";
 import { Link, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
-import CodeInput from "../../components/subpart/CodeInput.tsx";
+import CodeInput from "../../components/mono/CodeInput.tsx";
 
 export default function TwoFA(props) {
   const [error, setError] = useState("");

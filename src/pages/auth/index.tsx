@@ -45,7 +45,6 @@ function Auth() {
             setSnack(true);
           }}
           onSuccess={() => {
-            console.log("success signup");
             setStep(0);
           }}
         />

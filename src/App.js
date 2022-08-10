@@ -10,6 +10,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { getDesignTokens } from "./theme/theme";
 
 import Auth from "./pages/auth";
+import EmailVerification from "./pages/auth/EmailVerification";
 import Dashboard from "./pages/Dashboard/Dashboard.js";
 import ProtectedRoute from "./services/PrivateRoute";
 
@@ -42,6 +43,10 @@ function App() {
         <ThemeProvider theme={theme}>
           <Router>
             <Routes>
+              <Route
+                path="/emailverification"
+                element={<ProtectedRoute component={EmailVerification} />}
+              />
               <Route path="/" element={<Auth />} />
               <Route
                 path="/dashboard/*"

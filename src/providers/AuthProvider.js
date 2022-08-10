@@ -16,7 +16,9 @@ export function useAuth() {
 
 export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
+  // change this for all info ( currentUserInfo ), current uid only
   const [currentUser, setCurrentUser] = useState();
+  const [currentUserInfo, setCurrentUserInfo] = useState();
 
   const auth = getAuth();
 
@@ -50,6 +52,7 @@ export function AuthProvider({ children }) {
       await signInWithEmailAndPassword(auth, email, password).then(
         (userCredential) => {
           if (userCredential.user.emailVerified) {
+            // change to boolean prop isVerified
             respond = "verified";
           } else {
             respond = "not verified";
@@ -77,7 +80,10 @@ export function AuthProvider({ children }) {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       if (currentUser !== user.uid) {
+        // change user
+        setCurrentUserInfo(user);
         setCurrentUser(user.uid);
+        console.log(user.uid);
       }
 
       // ...
@@ -91,6 +97,7 @@ export function AuthProvider({ children }) {
 
   const value = {
     currentUser,
+    currentUserInfo,
     login,
     signUp,
     logout,

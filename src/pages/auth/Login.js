@@ -47,7 +47,7 @@ export default function Login(props) {
           navigate("/dashboard");
           break;
         case "not verified":
-          // navigate("/emailverification");
+          navigate("/emailverification");
           break;
         default:
       }

@@ -21,9 +21,3 @@ const ProtectedRoute = ({ component: RouteComponent }) => {
 };
 
 export default ProtectedRoute;
-
-/*  location.pathname === "/emailverification" ? (
-        <Navigate to="/dashboard" />
-      ) : (
-        <RouteComponent />
-      ) */

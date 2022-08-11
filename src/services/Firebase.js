@@ -11,11 +11,11 @@ const firebaseConfig = {
 
   storageBucket: `${process.env.REACT_APP_DOMAIN}.appspot.com`,
 
-  messagingSenderId: process.env.FIREBASE_MESSAGINGSENDERID,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID,
 
-  appId: process.env.FIREBASE_APPID,
+  appId: process.env.REACT_APP_FIREBASE_APPID,
 
-  measurementId: process.env.FIREBASE_MEASUREMENTID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENTID,
 };
 
 initializeApp(firebaseConfig);
